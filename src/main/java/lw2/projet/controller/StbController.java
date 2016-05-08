@@ -35,8 +35,12 @@ public class StbController {
 	public StbController() {
 		model = new Model();
 	}
+	
+	public Model getModel() {
+		return model;
+	}
 
-	// HOME
+	// ACCUEIL
 	@RequestMapping()
 	@ResponseBody
 	public String accueil() {
