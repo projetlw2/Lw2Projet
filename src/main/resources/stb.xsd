@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		
+		<xs:element name="stb" type="stbType"/>
+		
+		<xs:element name="customer" type="customerType"/>
+		<xs:element name="member" type="memberType"/>
+<!-- 		<xs:element name="adresse" type="stb:adresseType"/> -->
+		<xs:element name="functionality" type="fonctionalityType"/>
+		<xs:element name="priority" type="priorityType"/>
+		<xs:element name="requirement" type="requirementType"/>		
+				
+		<xs:complexType name="stbType">
+			<xs:sequence>
+				<xs:element name="id" type="xs:int"/>
+				<xs:element name="title" type="xs:string"/>
+				<xs:element name="version" type="xs:string"/>
+				<xs:element name="date" type="xs:string"/>
+				<xs:element name="description" type="xs:string" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="customer" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="member" minOccurs="2" maxOccurs="7"/>
+				<xs:element ref="functionality" minOccurs="2" maxOccurs="unbounded"/>
+				<xs:element name="comment" type="xs:string" minOccurs="0"/>
+			</xs:sequence>		
+		</xs:complexType>
+		
+<!-- 		<xs:complexType name="adresseType">
+			<xs:sequence>
+				<xs:element name="rue" type="xs:string" maxOccurs="1"/>
+				<xs:element name="codePostal" type="xs:int" maxOccurs="1"/>
+				<xs:element name="ville" type="xs:string" maxOccurs="1"/>		
+			</xs:sequence>
+		</xs:complexType> -->
+		
+		<xs:complexType name="customerType">
+			<xs:sequence>
+				<xs:element name="organization" type="xs:string"/>
+				<xs:element name="contact" type="xs:string"/>
+				<xs:element name="postalCode" type="xs:int"/>
+			</xs:sequence>
+		</xs:complexType>
+		
+		<xs:complexType name="memberType">
+			<xs:sequence>
+				<xs:element name="firstname" type="xs:string"/>
+				<xs:element name="name" type="xs:string"/>
+				<xs:element name="gender" type="xs:boolean" default="true"/>
+			</xs:sequence>		
+		</xs:complexType>
+		
+		<xs:simpleType name="priorityType">
+			<xs:restriction base="xs:int">
+				<xs:minInclusive value="1"/>
+				<xs:maxInclusive value="10"/>
+			</xs:restriction>
+		</xs:simpleType>
+		
+		<xs:complexType name="fonctionalityType">
+			<xs:sequence>
+				<xs:element name="description" type="xs:string" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="requirement" minOccurs="2" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="priority" use="required" type="xs:int"/>
+		</xs:complexType>
+		
+		<xs:complexType name="requirementType">
+			<xs:sequence>
+				<xs:element name="id" type="xs:string"/>
+				<xs:element name="description" type="xs:string"/>
+				<xs:element ref="priority"/>
+			</xs:sequence>
+		</xs:complexType>
+</xs:schema>

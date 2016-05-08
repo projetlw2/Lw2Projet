@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stb xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="stb.xsd">
+  <id>0</id>
+  <title>title</title>
+  <version>version</version>
+  <date>date</date>
+  <description>description</description>
+  <customer>
+    <organization>organisme</organization>
+    <contact>contact</contact>
+    <postalCode>0</postalCode>
+  </customer>
+  <member>
+    <firstname>firstname</firstname>
+    <name>name</name>
+    <gender>true</gender>
+  </member>
+  <member>
+    <firstname>firstname</firstname>
+    <name>name</name>
+    <gender>true</gender>
+  </member>
+  <functionality priority="0">
+    <description>description</description>
+    <requirement>
+      <id>id</id>
+      <description>description</description>
+      <priority>8</priority>
+    </requirement>
+    <requirement>
+      <id>id</id>
+      <description>description</description>
+      <priority>6</priority>
+    </requirement>
+  </functionality>
+  <functionality priority="0">
+    <description>description</description>
+    <requirement>
+      <id>id</id>
+      <description>description</description>
+      <priority>4</priority>
+    </requirement>
+    <requirement>
+      <id>id</id>
+      <description>description</description>
+      <priority>5</priority>
+    </requirement>
+  </functionality>
+</stb>
